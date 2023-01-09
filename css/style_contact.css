@@ -1,0 +1,68 @@
+/* FONTS */
+@font-face {
+    font-family: TheQueen;
+    src: url(/assets/the-queen.regular.ttf);
+}
+/* BODY */
+body {
+    background-color: rgb(19, 104, 64);
+    background-image: url(/assets/bg_contact.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+}
+
+/* EMELEMENTS */
+.main_title {
+    color: white;
+    font-size: 100px;
+    padding: 50px;
+    font-family: TheQueen, serif;
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    padding-left: 75px;
+    color: rgb(211, 211, 211);
+    font-size: 25px;
+    font-family: Helvetica, sans-serif, serif;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+}
+#list{
+    padding-left: 125px;
+    color: rgb(211, 211, 211);
+    font-size: 35px;
+    font-family: Helvetica, Arial;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+}
+img{
+    height: 50px;
+    width: 50px;
+    offset: 1 5 100;
+    transform: translateY(18%);
+}
+button{
+    transition: background-color 0.2s ease;
+    position: fixed;
+    margin: 15px;
+    background-color: rgba(0, 0, 0, 0.075);
+    border: none;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+}
+button:active{
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.555);
+}
+button:hover{
+    font-size: 16.5px;
+}

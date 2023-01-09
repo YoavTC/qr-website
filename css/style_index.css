@@ -1,0 +1,43 @@
+/* FONTS */
+@font-face {
+    font-family: TheQueen;
+    src: url(/assets/the-queen.regular.ttf);
+}
+/* BODY */
+body {
+    background-color: rgb(0, 0, 0);
+    background-image: url("https://i.imgur.com/hdTsrwv.gif");
+    
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* EMELEMENTS */
+.menu_b {
+    color: white;
+    font-size: 100px;
+    padding: 50px;
+    font-family: TheQueen, serif;
+    /*text-shadow: 2px 2px 4px rgb(32, 32, 32); SHADOW MAYBE?*/
+}
+
+.menu_b:link {
+    
+    text-decoration: none;
+}
+
+.menu_b:visited {
+    text-decoration: none;
+}
+
+.menu_b:hover {
+    text-decoration: underline;
+    
+}
+
+.menu_b:active {
+    text-decoration: underline;
+    opacity: 0.5;
+}
