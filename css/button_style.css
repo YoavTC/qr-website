@@ -1,0 +1,20 @@
+button{
+    transition: font-size 0.2s ease, background-color 0.2s ease;
+    position: fixed;
+    margin: 15px;
+    background-color: rgba(0, 0, 0, 0.075);
+    border: none;
+    color: white;
+    font-family: OstrichSans;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+}
+button:active{
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.555);
+}
+button:hover{
+    font-size: 18px;
+}

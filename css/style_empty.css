@@ -1,0 +1,51 @@
+/* FONTS */
+@font-face {
+    font-family: TheQueen;
+    src: url(/assets/the-queen.regular.ttf);
+
+    font-family: OstrichSans;
+    src: url(/assets/OstrichSans-Medium.otf);
+}
+/* EMELEMENTS */
+h1 {
+    font-family: TheQueen, OstrichSans;
+    color: black;
+    font-size: 100px;
+    padding: 50px;
+    text-align: center;
+}
+h2 {
+    font-family: TheQueen, OstrichSans;
+    color: black;
+    font-size: 75px;
+    text-align: center;
+}
+img{
+    height: 50px;
+    width: 50px;
+    offset: 1 5 100;
+    transform: translateY(18%);
+}
+button{
+    transition: font-size 0.2s ease, background-color 0.2s ease;
+    background-color: rgba(0, 0, 0, 0.864);
+    border: none;
+    color: rgb(255, 255, 255);
+    font-family: OstrichSans;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button:active{
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.555);
+}
+button:hover{
+    font-size: 18px;
+}

@@ -2,11 +2,14 @@
 @font-face {
     font-family: TheQueen;
     src: url(/assets/the-queen.regular.ttf);
+
+    font-family: OstrichSans;
+    src: url(/assets/OstrichSans-Medium.otf);
 }
 /* BODY */
 body {
     background-color: rgb(19, 104, 64);
-    background-image: url(/assets/bg_about.png);
+    background-image: url(../assets/background/about.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: right top;
@@ -25,8 +28,8 @@ body {
 p{
     padding-left: 75px;
     color: rgb(211, 211, 211);
-    font-size: 25px;
-    font-family: Helvetica, sans-serif, serif;
+    font-size: 35px;
+    font-family: OstrichSans;
     text-align: left;
     text-decoration: none;
     text-shadow: 1px 1px 2px black;
@@ -36,22 +39,18 @@ img{
     height: auto;
     box-shadow: 2px 2px 5px black;
 }
-button{
-    position: fixed;
-    margin: 15px;
-    background-color: rgba(0, 0, 0, 0.075);
-    border: none;
-    color: white;
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 100px;
-    height: 40px;
+a{
+    color: rgb(95, 122, 189);
+    text-decoration: none;
 }
-button:active{
-    opacity: 0.5;
-    background-color: rgba(0, 0, 0, 0.555);
+a:visited{
+    color: rgb(95, 122, 189);
+    text-decoration: none;
 }
-button:hover{
-    font-size: 16.5px;
+a:hover{
+    text-decoration: underline;
+}
+a:active{
+    color: rgba(95, 122, 189, 0.452);
+    text-decoration: none;
 }
