@@ -26,7 +26,7 @@ var projectList = [
     {time: 20, date: 75, pride: 70, popularity: 200,  name: "Minecraft Album Covers", link: "https://www.reddit.com/r/Minecraft/comments/yqw87q/my_friends_and_i_recreated_a_bunch_of_album/"},
     {time: 5, date: 55, pride: 45, popularity: 35,  name: "Valorant in Minecraft", link: "https://www.reddit.com/r/Minecraft/comments/mzq7av/i_created_jett_and_sova_from_valorant_in_minecraft/"},
     {time: 150, date: 80, pride: 88, popularity: 500,  name: "YouTube Channel with Friends", link: "https://www.youtube.com/@AktimelGroup"},
-    
+    {time: 4, date: 99, pride: 87, popularity: 0,  name: "Bamboo Flute Mod", link: "https://www.curseforge.com/minecraft/mc-mods/bamboo-flute"},
 
 
 
