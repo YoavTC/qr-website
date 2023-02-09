@@ -1,0 +1,34 @@
+/* FONTS */
+@font-face {
+    font-family: TheQueen;
+    src: url(/assets/the-queen.regular.ttf);
+
+    font-family: OstrichSans;
+    src: url(/assets/OstrichSans-Medium.otf);
+}
+/* EMELEMENTS */
+h1 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+}
+h2 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 75px;
+    text-align: center;
+}
+h3 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 15px;
+    text-align: center;
+}
+p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 45px;
+    text-align: center;
+    vertical-align: middle;
+}
