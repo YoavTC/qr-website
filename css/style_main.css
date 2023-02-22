@@ -32,7 +32,12 @@ section p{
 
     padding: 5vh;
 }
-
+section u{
+    color: #7289DA;
+}
+section u:hover {
+    color: #454FBF;
+}
 section a{
     color: #0074D9;
 }
