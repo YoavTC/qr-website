@@ -1,7 +1,7 @@
 /*FONTS*/
 @font-face {
     font-family: TitleFont;
-    src: url(../assets/open-sans.extrabold.ttf);
+    src: url(/assets/open-sans.extrabold.ttf);
 }
 body {
     font-family: Arial, sans-serif;
