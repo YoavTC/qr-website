@@ -8,6 +8,7 @@ body {
     font-size: 16px;
     color: #e1e1e1;
     margin: 50vh;
+    margin-bottom: 5vh;
     margin-top: 5vh;
     padding: 5vh;
 }
@@ -37,6 +38,7 @@ a:hover {
 /*COVER*/
 #cover{
     position: relative;
+    
 }
 #cover h1 {
     position: absolute;
@@ -46,6 +48,7 @@ a:hover {
     color: white;
     text-align: center;
     font-size: 2.5rem;
+    
 }
 #cover img{
     display: block;
@@ -67,6 +70,20 @@ pre {
     gap: 20px;
 }
 .image-grid img {
+    width: 100%;
+    height: auto;
+}
+.image-grid video {
+    width: 100%;
+    height: auto;
+}
+/*MUSIC GRID*/
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.music-grid video {
     width: 100%;
     height: auto;
 }
