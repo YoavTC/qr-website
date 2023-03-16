@@ -1,0 +1,31 @@
+@font-face {
+    font-family: ExtraBold;
+    src: url('open-sans.extrabold.ttf');
+}
+
+body {
+    background-color: white;
+}
+
+#main {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+h1 {
+    font-family: ExtraBold;
+    font-size: 200px;
+    transform: translate(100%, 100%);
+    color: black;
+}
