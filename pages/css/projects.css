@@ -1,0 +1,9 @@
+@font-face {
+    font-family: ExtraBold;
+    src: url('../open-sans.extrabold.ttf');
+}
+
+
+h1 {
+    font-family: ExtraBold;
+}

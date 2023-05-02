@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style_index.css">
-    <title>Menu Page</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>🌅 • Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a class="menu_b" href="https://yoavtc.work/about.html">About Me</a>
-    <br>
-    <a class="menu_b" href="https://yoavtc.work/projects.html">My Projects</a>
-    <br>
-    <a class="menu_b" href="https://yoavtc.work/contact.html">Contact Me</a>
+    <div id="main">
+        <img src="/assets/background/background_with_signs.svg" width="1500">
+        <div class="overlay">
+            <button class="invisible_button" id="car_button" onclick="window.location.href='pages/projects.html'"></button>
+            <button class="invisible_button" id="window_button" onclick="window.location.href='pages/about.html'"></button>
+            <button class="invisible_button" id="tree_button" onclick="window.location.href='pages/contact.html'"></button>
+            <!-- <button class="invisible_button" id="laundry_button" onclick="window.location.href='pages/about.html'"></button> -->
+        </div>
+    </div>
 </body>
 </html>
