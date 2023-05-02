@@ -1,0 +1,44 @@
+@font-face {
+    font-family: ExtraBold;
+    src: url('../open-sans.extrabold.ttf');
+}
+
+body {
+    background-color: white;
+    font-size: 26px;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding: 5vh;
+}
+h1 {
+    text-align: center;
+    font-family: ExtraBold;
+}
+h2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem 0;
+}
+h3 {
+    color: rgb(163, 163, 163);
+    font-size: 75%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin: 1rem 0;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem 0;
+}
+a {
+    text-decoration: underline;
+    color: rgb(45, 32, 110);
+
+}
+a:visited {
+    color: rgb(45, 32, 110);
+}
+a:hover {
+    color: rgb(82, 68, 149);
+}
