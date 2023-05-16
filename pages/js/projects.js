@@ -2,7 +2,8 @@ const gridParent = document.getElementById('grid-parent');
 
 window.onload = function() {
     projectsList.sort((a, b) => new Date(a.date) - new Date(b.date));
-    sortProjects();
+    projectsList.reverse();
+    displayProjects();
 }
 
 //Projects array
@@ -26,10 +27,10 @@ var projectsList = [
     {date: '2022-09-11', name: "Album Covers in Minecraft", link: "https://www.reddit.com/r/Minecraft/comments/yqw87q/my_friends_and_i_recreated_a_bunch_of_album/"},
 
     {date: '2021-04-27', name: "Valorant in Minecraft", link: "https://www.reddit.com/r/Minecraft/comments/mzq7av/i_created_jett_and_sova_from_valorant_in_minecraft/"},
+    {date: '2023-05-15', name: "pizza-defender", link: ""},
 
-
-    // {date: 'YYYY-DD-MM', name: "Project Name", link: ""},
-    // {date: 'YYYY-DD-MM', name: "Project Name", link: ""}
+    // {date: 'YYYY-MM-DD', name: "Project Name", link: ""},
+    // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
 ]
 
 //get sorting way list
@@ -70,7 +71,9 @@ function displayProjects() {
         //Create the div and name it
         let child = document.createElement('div');
         child.classList.add('grid-item');
-        child.textContent = (projectsList[i].name).replace('-', ' ');
+
+        let childTitle = document.createElement('h2');
+        childTitle.textContent = (projectsList[i].name).replace('-', ' ');
 
         //Create img & set it to the correct path
         var img = document.createElement("img");
@@ -94,6 +97,7 @@ function displayProjects() {
         //Add each child to its parent: img -> text -> link -> grid
         button.appendChild(child);
         child.appendChild(img);
+        child.appendChild(childTitle);
         gridParent.appendChild(button);
     }
 }

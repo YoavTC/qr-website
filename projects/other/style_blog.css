@@ -7,7 +7,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #e1e1e1;
-    margin: 50vh;
+    margin: 40vh;
     margin-bottom: 5vh;
     margin-top: 5vh;
     padding: 5vh;
@@ -47,7 +47,7 @@ a:hover {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 4.5rem;
     
 }
 #cover img{

@@ -16,8 +16,11 @@ h1 {
 }
 h2 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
+    transform: translateY(-175px);
     margin: 1rem 0;
+    color: white;
+    text-shadow: 1px 1px 5px black;
 }
 h3 {
     color: rgb(163, 163, 163);
@@ -40,7 +43,7 @@ a:visited {
     color: rgb(45, 32, 110);
 }
 a:hover {
-    color: rgb(82, 68, 149);
+    opacity: 85%;
 }
 
 /* Sorting */
@@ -73,13 +76,13 @@ option {
     display: grid;
     justify-content: center;
     grid-template-columns: max-content max-content max-content;
-    gap: 10px;
+    gap: 15px;
     padding: 10px;
 }
   
 .grid-item {
     max-width: 550px;
-    max-height: 550px;
+    max-height: 270px;
     width: auto;
     height: auto;
 
