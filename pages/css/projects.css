@@ -1,9 +1,116 @@
 @font-face {
     font-family: ExtraBold;
-    src: url('../open-sans.extrabold.ttf');
+    src: url('../../open-sans.extrabold.ttf');
+}
+
+body {
+    background-color: white;
+    font-size: 26px;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding: 5vh;
+}
+h1 {
+    text-align: center;
+    font-family: ExtraBold;
+}
+h2 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem 0;
+}
+h3 {
+    color: rgb(163, 163, 163);
+    font-size: 75%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin: 1rem 0;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem 0;
+}
+a {
+    text-decoration: underline;
+    color: rgb(45, 32, 110);
+
+}
+a:visited {
+    color: rgb(45, 32, 110);
+}
+a:hover {
+    color: rgb(82, 68, 149);
+}
+
+/* Sorting */
+#sorting {
+    display: block;
+    margin: auto;
+
+    text-align: center;
+    width: 200px;
+    height: 70px;
+    font-size: 110%;
+    font-family: Helvetica, sans-serif;
+    cursor: pointer;
+
+    appearance: none;
+    border-radius: 1%;
+
+    color: white;
+    background-color: black;
+}
+
+option {
+    background-color: rgb(230, 230, 230);
+    color: black;
 }
 
 
-h1 {
-    font-family: ExtraBold;
+/* Grid */
+#grid-parent {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: max-content max-content max-content;
+    gap: 10px;
+    padding: 10px;
+}
+  
+.grid-item {
+    max-width: 550px;
+    max-height: 550px;
+    width: auto;
+    height: auto;
+
+    border-radius: 0%;
+    font-family: ExtraBold, Helvetica, sans-serif;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+}
+a:active {
+    opacity: 50%;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: rgb(39, 39, 86);
 }

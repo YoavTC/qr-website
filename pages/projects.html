@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/projects.css">
     <title>📔 • My Projects</title>
 </head>
 <body>
@@ -11,9 +12,19 @@
         My Projects
     </h1>
 
-
-
-    <button id="back_button" onclick="window.location.href='../'" style="border: 0px;
+    <select id="sorting">
+        <option value="" selected disabled hidden>Sort By...</option>
+        <option value="oldest">Oldest</option>
+        <option value="newest">Newest</option>
+    </select>
+    <br>
+    <h3>(projects with cover pictures have a documentation page)</h3>
+    <br>
+    <!-- Projects Grid -->
+    <div id="grid-parent"></div>
+      
+    <!-- Back Button -->
+    <button id="back_button" onclick="window.location.href='../#back'; window.scrollTo(0, 1000);" style="border: 0px;
         background-color: transparent;
         width: 80px;
         height: 80px;
@@ -23,5 +34,7 @@
         cursor: pointer;">
         <img src="../assets/icons/back.png" style="width: 80px; height: 80px;">
     </button>
+    
+    <script src="js/projects.js"></script>
 </body>
 </html>
