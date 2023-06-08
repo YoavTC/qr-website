@@ -37,6 +37,8 @@ p {
 a {
     text-decoration: underline;
     color: rgb(45, 32, 110);
+    opacity: 100%;
+    transition: opacity 0.2s ease;
 
 }
 a:visited {
@@ -75,14 +77,14 @@ option {
 #grid-parent {
     display: grid;
     justify-content: center;
-    grid-template-columns: max-content max-content max-content;
+    grid-template-columns: max-content max-content max-content max-content max-content;
     gap: 15px;
     padding: 10px;
 }
   
 .grid-item {
-    max-width: 550px;
-    max-height: 270px;
+    max-width: 350px;
+    max-height: 170px;
     width: auto;
     height: auto;
 
@@ -108,12 +110,12 @@ option {
 a {
     text-decoration: none;
 }
+
 a:active {
     opacity: 50%;
 }
-a:visited {
-    color: black;
-}
-a:hover {
-    color: rgb(39, 39, 86);
+
+a h2 {
+    font-size: 100%;
+    padding-top: 42px;
 }
