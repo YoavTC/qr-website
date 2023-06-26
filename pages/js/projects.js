@@ -29,6 +29,11 @@ var projectsList = [
     {date: '2021-04-27', name: "Valorant in Minecraft", link: "https://www.reddit.com/r/Minecraft/comments/mzq7av/i_created_jett_and_sova_from_valorant_in_minecraft/"},
     {date: '2023-05-15', name: "pizza-defender", link: ""},
 
+    {date: '2023-05-02', name: "israel-wolfenstein", link: ""},
+
+
+    // {date: 'YYYY-MM-DD', name: "Project Name", link: ""},
+    // {date: 'YYYY-MM-DD', name: "Project Name", link: ""},
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""},
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""}
 ]
