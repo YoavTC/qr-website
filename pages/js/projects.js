@@ -30,6 +30,7 @@ var projectsList = [
     {date: '2023-05-15', name: "pizza-defender", link: ""},
 
     {date: '2023-05-02', name: "israel-wolfenstein", link: ""},
+    {date: '2023-07-09', name: "catch-the-cat", link: ""}
 
 
     // {date: 'YYYY-MM-DD', name: "Project Name", link: ""},

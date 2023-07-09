@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐈 • Catch the Cat</title>
+    <link rel="stylesheet" href="other/style_blog.css">
+
+    
+    <style>body {background: linear-gradient(to bottom, #381414, #751d1d);background-size: cover;}</style>
+</head>
+<body>
+    <div id="cover">
+        <h1 class="post-title">Catch the Cat Game</h1>
+        <img src="banners/catch-the-cat.png">
+    </div>
+    <br>
+    <p>
+        I made this game while participating in the <a href="https://www.youtube.com/@GMTK" target="_blank">Game Maker's Tool Kit</a> 2023 Game Jam. The theme was <b><i>Roles Reversed</i></b>. The first thing that popped into my mind was the clear roles between a cat and a mouse. One hunts, other is being hunted.
+    </p>
+    <p>
+        After playing some of the past Jam's winners, I decided to go for a simple 2D puzzle game because it was a genre I never tried before, and that I don't normally play.
+    </p>
+    <p>
+        The reverse theme was reversing the roles, so I made the player be the mouse and the enemy be the cat. In the game, the player chases the cat around the level. Jerry would always run away from Tom, trick him somehow, and use his brain rather than his strength and size, so I decided that the player would not be able to catch the cat by simply running after it they needed to outsmart it.
+    </p>
+    <h3><a href="https://yoav-tc.itch.io/catch-the-cat" target="_blank">Here is a link to the game's page on itch.io</a></h3>
+    <p>
+        Now of course, it isn't hard to outsmart an AI that I had 48 hours to write, but it got the job done.
+        <br>
+        This is the the code that makes the AI tick:
+    </p>
+    <pre>
+private void Awake()
+{
+    rb = GetComponent<Rigidbody>();
+    isGettingCaught = false;
+}
+</pre>
+<pre>
+private void Update()
+{
+    //calculate movement speed
+    catSpeed = speedCurve.Evaluate(Vector3.Distance(transform.position, playerObject.transform.position)) * 100;
+    
+    float playerX = playerObject.transform.position.x;
+    float catX = gameObject.transform.position.x;
+    if (isGrounded)
+    {
+        double maxCatX = catX + 1;
+        double minCatX = catX - 1;
+        
+        Debug.DrawLine(transform.position, new Vector3((float)minCatX, 0, 0), Color.green);
+        Debug.DrawLine(transform.position, new Vector3((float)maxCatX, 0, 0), Color.magenta);
+        if (playerX > minCatX && playerX < maxCatX)
+        {
+            playerAboveCat = true;
+        }
+    }
+    
+    //Flipping
+    if (isFacingRight == false && rb.velocity.x > 0)
+    {
+        Flip();
+    } else if (isFacingRight && rb.velocity.x < 0)
+    {
+        Flip();
+    }
+}
+</pre>
+<pre>
+private void FixedUpdate()
+{
+    isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+    
+    //Should Flee?
+    if (Vector3.Distance(playerObject.transform.position, gameObject.transform.position) < range)
+    {
+        float playerX = playerObject.transform.position.x;
+        float catX = gameObject.transform.position.x;
+        
+        //Save Y velocity to not effect gravity
+        temporaryYvelocity = rb.velocity.y;
+        
+        if (playerAboveCat) //Side flee
+        {
+            //decide weather to move the cat left or right based on the player's X position
+            fleeDirection = playerX > catX ? Vector3.left : Vector3.right;
+        } 
+        else { //Angle flee
+            fleeDirection = transform.position - playerObject.transform.position;
+        }
+        
+        fleeDirection.Normalize();
+        Vector3 fleeVelocity = fleeDirection * catSpeed * Time.fixedDeltaTime;
+        
+        //Applying the saved Y velocity to not effect gravity
+        fleeVelocity.y = temporaryYvelocity;
+        rb.velocity = fleeVelocity; 
+    }
+    //Slowly smoothly slow down the cat
+    else if (rb.velocity != Vector3.zero)
+    {
+        temporaryYvelocity = rb.velocity.y;
+        rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, 5f * Time.fixedDeltaTime);
+        rb.velocity = new Vector3(rb.velocity.x, temporaryYvelocity, rb.velocity.z);
+    }
+}
+</pre>
+    <br>
+    <p>
+        I am very glad about the way the game turned out, especially because I only had 48 hours to make it.
+        <br>
+        Below are some images that document the progress of the development process.
+    </p>
+    <h2>Pictures:</h2>
+    <div class="image-grid">
+        <img src="imgs/catch-the-cat/characters.png" title="Early concept sketch of the character models">
+        <img src="imgs/catch-the-cat/project4.png">
+        <img src="imgs/catch-the-cat/project.png">
+        <img src="imgs/catch-the-cat/project2.png">
+        <img src="imgs/catch-the-cat/mouseModel.png">
+        <img src="imgs/catch-the-cat/earlyMouseModel.png">
+        <img src="imgs/catch-the-cat/project3.png">
+        <img src="imgs/catch-the-cat/project5.png">
+    </div>
+    <button id="back_button" onclick="window.location.href='../pages/projects.html'" style="border: 0px;
+        background-color: transparent;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 35px;
+        left: 35px;
+        cursor: pointer;">
+        <img src="../assets/icons/backToProj.png" style="width: 80px; height: 80px;">
+    </button>
+</body>
+</html>

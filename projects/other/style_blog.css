@@ -58,6 +58,7 @@ a:hover {
 /*CODE*/
 pre {
     background-color: #00000085;
+    font-size: 80%;
     padding: 1rem;
     overflow-x: auto;
     color:rgb(214, 213, 191);
