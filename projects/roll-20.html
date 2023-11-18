@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲 • Roll a 20 Sided Die</title>
+    <link rel="stylesheet" href="other/style_blog.css">
+    
+    <style>body {background: linear-gradient(to bottom, #4c3c2c, #27221d);background-size: cover;}</style>
+</head>
+<body>
+    <div id="cover">
+        <h1 class="post-title">Roll a 20 Sided Die</h1>
+        <img src="banners/roll-20.png">
+    </div>
+    <br>
+    <p>
+        I decided to host an online D&D session with my friends after wanting to for a long time. We were all noobies, and had no experience in D&D, so I took it on myself to learn how to manage a game session and be a 'Dungeon Master'.
+    </p>
+    <p>
+        I made a story and used Google Slides (Yes I Google Slides) to visualize the ongoing game to them. We also used a <a href="https://wheelofnames.com/" target="_blank">wheel spinner</a> as a method of rolling the dice.
+    </p>
+    <p>
+        I liked it very much but decided that the cool aspect of rolling the dice isnt the same as letting a wheel spin. So I decided to make a tool to help me with that for the next session.
+    </p>
+    <p>
+        I made the program using Unity's Web game build support with OpenGL, and it took a very short time to make as I knew what I needed and where to get stuff.
+    </p>
+    <br>
+    <h1> <a href="https://yoav-tc.itch.io/roll-20-die" target="_blank">
+        This project is availble on my itch-io page!!
+    </h1> </a>
+    <br>
+    <p>
+        This is the code that determains which side the die is facing:
+    </p>
+<pre><code class="language-c#">public bool isDiceSleeping;
+public int currentDiceRoll;
+private int diceSides = 20;
+private float topSideHeight;
+public Rigidbody rb;
+
+//Event to let other scripts know when the die has finished rolling
+public delegate void DiceChangeHandler(int num);
+public event DiceChangeHandler DiceChangeEvent;
+
+void Update() 
+{
+    if (rb.IsSleeping())
+    {
+        if (!isDiceSleeping)
+        {
+            topSideHeight = -50000;
+            
+            for (int i = 0; i < diceSides; i++)
+            {
+                Transform child = gameObject.transform.GetChild(i);
+
+                if (child.position.y > topSideHeight)
+                {
+                    topSideHeight = child.position.y;
+                    currentDiceRoll = i + 1;
+                    DiceChangeEvent?.Invoke(currentDiceRoll);
+                }
+            }
+        }
+
+        isDiceSleeping = true;
+    } else isDiceSleeping = false;
+}</code></pre>
+
+<p>Here's the simple code that makes the camera follow the die:</p>
+<pre><code class="language-c#">
+private void Start()
+{
+    difference = transform.position - die.position;
+}
+
+private void Update()
+{
+    transform.position = die.position + difference;
+}
+</code></pre>
+<p>And also the code that launches the die in the air and gives it a little push:</p>
+<pre><code class="language-c#">
+//Gets triggered when the roll button gets pushed
+public void RollDie()
+{
+    if (die.GetComponent<DeterministicDice>().isDiceSleeping)
+    {
+        Vector3 randomForce = Random.insideUnitSphere;
+    
+        randomForce.x = ReturnCappedNum(randomForce.x * forceMultiplier.x);
+        randomForce.y = 10 * forceMultiplier.y;
+        randomForce.z = ReturnCappedNum(randomForce.z * forceMultiplier.z);
+        
+        StartCoroutine(PushDie(randomForce));
+        die.GetComponent<Rigidbody>().AddForce(Vector3.up * 25, ForceMode.Impulse);
+        die.GetComponent<Rigidbody>().angularVelocity += angularForce * (Random.Range(0, 2) * 2 - 1);
+        Debug.Log(randomForce);
+    }
+}
+
+//Adds the secondary wave of force for the die
+private IEnumerator PushDie(Vector3 force)
+{
+    yield return new WaitForSeconds(0.3f);
+    die.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
+}
+
+//A Utility function to prevent the values from being too low
+private float ReturnCappedNum(float num)
+{
+    if (num > 0 && num < 5) return 15;
+    if (num < 0 && num < -5) return -15;
+    return num;
+}
+</code></pre>
+
+<pre><code class="language-c#">
+private float ReturnCappedNum(float num)
+{
+    if (num > 0 && num < 5) return 15;
+    if (num < 0 && num < -5) return -15;
+    return num;
+}
+</code></pre>
+    <button id="back_button" onclick="window.location.href='../pages/projects.html'" style="border: 0px;
+        background-color: transparent;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 35px;
+        left: 35px;
+        cursor: pointer;">
+        <img src="../assets/icons/backToProj.png" style="width: 80px; height: 80px;">
+    </button>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+</body>
+</html>

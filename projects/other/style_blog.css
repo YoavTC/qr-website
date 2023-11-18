@@ -57,12 +57,11 @@ a:hover {
 }
 /*CODE*/
 pre {
-    background-color: #00000085;
-    font-size: 80%;
-    padding: 1rem;
-    overflow-x: auto;
-    color:rgb(214, 213, 191);
-    font-weight: bold;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+}
+pre::first-line {
+    display: none;
+    font-size: 0;
 }
 /*IMG GRID*/
 .image-grid {

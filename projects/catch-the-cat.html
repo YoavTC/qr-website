@@ -31,14 +31,17 @@
         <br>
         This is the the code that makes the AI tick:
     </p>
-    <pre>
+
+</code></pre>
+
+    <pre><code class="language-c#">
 private void Awake()
 {
     rb = GetComponent<Rigidbody>();
     isGettingCaught = false;
 }
-</pre>
-<pre>
+</code></pre>
+<pre><code class="language-c#">
 private void Update()
 {
     //calculate movement speed
@@ -68,8 +71,8 @@ private void Update()
         Flip();
     }
 }
-</pre>
-<pre>
+</code></pre>
+<pre><code class="language-c#">
 private void FixedUpdate()
 {
     isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -107,7 +110,9 @@ private void FixedUpdate()
         rb.velocity = new Vector3(rb.velocity.x, temporaryYvelocity, rb.velocity.z);
     }
 }
-</pre>
+</code></pre>
+
+
     <br>
     <p>
         I am very glad about the way the game turned out, especially because I only had 48 hours to make it.
@@ -135,5 +140,10 @@ private void FixedUpdate()
         cursor: pointer;">
         <img src="../assets/icons/backToProj.png" style="width: 80px; height: 80px;">
     </button>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>
