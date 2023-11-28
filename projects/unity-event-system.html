@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📞 • Unity Event System</title>
+    <link rel="stylesheet" href="other/style_blog.css">
+
+    
+    <style>body {background: linear-gradient(to bottom, #23354f, #1f0b8d);background-size: cover;}</style>
+</head>
+<body>
+    <div id="cover">
+        <h1 class="post-title">Unity Trigger Listener System</h1>
+        <img src="banners/unity-event-system.png">
+    </div>
+</code></pre>
+
+    <br>
+    <p>
+        This system I made is a way for two (or more) GameObjects to communicate dynamically.
+    </p>
+    <p>
+        It works like this:<br>
+        There is the <b>Event Source</b>, which extends this base abstract class:
+    </p>
+
+<pre><code class="language-c#">
+public abstract class TriggerEventSource : MonoBehaviour
+{
+    public delegate void SourceTriggerHandler(EventReturnType eventType);
+    public abstract event SourceTriggerHandler SourceTriggerEvent;
+}
+</code></pre>
+    <p>
+        And there is the <b>Event Listener</b>, which extends this base abstract class:
+    </p>
+
+<pre><code class="language-c#">
+public abstract class TriggerEventListener : MonoBehaviour
+{
+    public abstract void EventTriggered(EventReturnType eventType);
+    public TriggerEventSource eventSource;
+    
+    private void Start()
+    {
+        eventSource.SourceTriggerEvent += EventTriggered;
+    }
+}
+</code></pre>
+    <br>
+    <p>
+        The <b><u>TriggerEventSource</u></b> field in the <b>TriggerEventListener</b> class needs to be assigned in the inspector. <br>
+        There can be zero listeners, as well as 100 listeners to a source. That what makes it so dynamic.
+    </p>
+    <br>
+    <p>
+        When we want to trigger the event from the source, we simply run this line of code on the script that extends the <b>TriggerEventSource</b> class:
+    </p>
+<pre><code class="language-c#">
+SourceTriggerEvent?.(EventReturnType.SOMETHING)
+</code></pre>
+    <p>
+        Passing the enum value we want to make it easier to handle it on the reciving end.
+    </p>
+    <br>
+    <h2>Video Example:</h2>
+    <div class="embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IPmccwIB9w0?si=tyJ_39GUVj4Joq8N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <button id="back_button" onclick="window.location.href='../pages/projects.html'" style="border: 0px;
+        background-color: transparent;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 35px;
+        left: 35px;
+        cursor: pointer;">
+        <img src="../assets/icons/backToProj.png" style="width: 80px; height: 80px;">
+    </button>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -24,6 +24,9 @@ p {
     font-weight: bold;
     margin: 1rem 0;
 }
+p b {
+   font-weight: bolder; 
+}
 a {
     color: #0074D9;
     text-decoration: none;
