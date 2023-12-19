@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
         window.scrollTo(0, 1000);
         ageTitle = document.getElementById('age');
         text = ageTitle.textContent;
-        newText = text.replace(0, 18);
+        newText = text.replace(0, GetAge(dateOfBirth));
         ageTitle.textContent = newText;
     }
 });
