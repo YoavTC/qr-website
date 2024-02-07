@@ -93,20 +93,20 @@ function displayProjects() {
 
         //Create img & set it to the correct path
         var img = document.createElement("img");
-        img.src = "../../projects/banners/" + projectsList[i].name + ".png";
+        img.src = "../../website/projects/banners/" + projectsList[i].name + ".png";
 
         //Create the <a> link
         let button = document.createElement('a');
         
         //If the project has a blog page
         if (projectsList[i].link == '') {
-            button.href = "../../projects/" + projectsList[i].name + ".html"; 
+            button.href = "../../website/projects/" + projectsList[i].name + ".html"; 
         } else {
             button.target = "_blank";
             button.href = projectsList[i].link;
 
             //placeholder image
-            img.src = "../../projects/banners/placeHolder.png";
+            img.src = "../../website/projects/banners/placeHolder.png";
         }
 
 
